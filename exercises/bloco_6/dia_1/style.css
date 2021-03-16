@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.3;
+}
+
+body {
+  background-color: #adb5bd;
+  font-family:'Courier New', Courier, monospace
+}
+header {
+  background-color: #e9ecef;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  border: solid black 1px;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+form {
+  background-color: #e9ecef;
+  width: 50%;
+  margin: auto;
+  margin-top: 15px;
+  border: solid black 1px;
+  border-radius: 4px;
+}
+
+.container {
+  padding: 25px 100px;
+}
+
+.line, button {
+  padding: 5px;
+}
+
+button {
+  margin-top: 5px;
+}
+
+input[type=text], input[type=email] {
+  width: 100%
+}
+
+textarea {
+  width: 100%;
+}
+fieldset {
+  width: 50%
+  margin-left: auto;
+}
