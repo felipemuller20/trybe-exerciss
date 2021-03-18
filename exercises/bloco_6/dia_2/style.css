@@ -1,0 +1,18 @@
+body {
+  background-color: #e9ecef;
+  width: 80%;
+  margin: auto;
+  max-width: 100%;
+}
+
+.title {
+  padding-top: 15px;
+}
+.first-p {
+  margin-bottom: 15px;
+}
+
+.last-btns {
+  padding-bottom: 25px;
+}
+
