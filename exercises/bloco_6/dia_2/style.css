@@ -3,6 +3,8 @@ body {
   width: 80%;
   margin: auto;
   max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .title {

@@ -23,17 +23,19 @@ function validateData(data) {
   return false;
 }
 
-function checkData() {
-  const inputData = document.querySelector('.input-data');
-  let data = inputData.value;
-  const userData = validateData(data);
-  if (!userData && data.length) {
-    inputData.value = '';
-    alert('data invalida');
-    return false;
-  }
-  return userData;
-}
+// function checkData() {
+//   const inputData = document.querySelector('.input-data');
+//   let data = inputData.value;
+//   const userData = validateData(data);
+//   if (!userData && data.length) {
+//     inputData.value = '';
+//     alert('data invalida');
+//     return false;
+//   }
+//   return userData;
+// }
+
+
 
 function checkEmail() {
   const email = document.querySelector('.email-input');
