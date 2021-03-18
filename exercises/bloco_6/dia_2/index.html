@@ -7,9 +7,12 @@
   <title>Document</title>
   <link rel="stylesheet" href="bulma/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+  
 </head>
 <body>
-  <header>
+  <header class='form-header'>
     <h1 class='title'>Formulário para cadastro de currículo</h1>
     <p class='subtitle first-p'>Preencha os campos abaixo.</p>
   </header>
@@ -95,7 +98,7 @@
         <div class='field'>
           <label class='label' for="start-date">Data de início: </label class='label'>
             <div class="control">
-              <input class='input' type="text" name="start-date" value="" required>
+              <input class='input' type="text" name="start-date" value="" required id="datepicker" readonly>
             </div>
         </div>
         <div class="control last-btns">
@@ -104,7 +107,10 @@
         </div>
     </div>
     </form>
-  <section></section>
   <script src="script.js"></script>
+  <script src="pikaday.js"></script>
+<script>
+    var picker = new Pikaday({ field: document.getElementById('datepicker') });
+</script>
 </body>
 </html>
