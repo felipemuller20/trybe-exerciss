@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}  
+body {
+  margin: 10px;
+  font-size: 18px;
+}
+
+header {
+  background-color:aliceblue;
+}
+
+header p {
+  font-weight: bold;
+  text-align: center;
+}
+
+header nav {
+  display: none;
+}
+
+.main-content h1 {
+  font-size: 1.8em;
+}
+
+.main-content p {
+  line-height: 1.5em;
+}
+
