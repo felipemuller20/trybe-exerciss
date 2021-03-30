@@ -3,11 +3,11 @@ const createNew = (fullName) => {
   return { Nome: fullName, email: `${email}@trybe.com`};
 }
 
-const newEmpolyees = (employee) => {
+const newEmpolyees = (action) => {
   const employees = {
-    id1: employee('Pedro Guerra'),
-    id2: employee('Luiza Drumond'),
-    id3: employee('Carla Paiva'),
+    id1: action('Pedro Guerra'),
+    id2: action('Luiza Drumond'),
+    id3: action('Carla Paiva'),
   };
   return employees;
 }

@@ -1,8 +1,8 @@
-const sorteio = (aposta, checaNum) => {
+const sorteio = (aposta, action) => {
   const luckyNumber = Math.floor(Math.random() * 5) + 1;
   console.log(`Aposta: ${aposta}
 Sorteado: ${luckyNumber}`);
-  return checaNum(aposta, luckyNumber) ? `Parabéns, você acertou!` : `Tente novamente!`;
+  return action(aposta, luckyNumber) ? `Parabéns, você acertou!` : `Tente novamente!`;
 }
 
 const verificaNum = (apostado, sorteado) => {
