@@ -3,14 +3,12 @@ import PersonalData from './PersonalData'
 import States from './States';
 import Residence from './Residence';
 import Resume from './Resume';
-import SubmitButton from './SubmitButton'
 
 class App extends React.Component {
 
   constructor() {
     super()
     this.handleChange = this.handleChange.bind(this)
-    this.handleSendClick = this.handleSendClick.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
 
     this.state = {
@@ -41,10 +39,6 @@ class App extends React.Component {
     event.preventDefault();
   }
 
-  handleSendClick(event) {
-    console.log(this.state)
-  }
-
   render() {
     return (
       <div>
@@ -65,7 +59,7 @@ class App extends React.Component {
             <Resume text='Ultimo cargo:' name='position' value={this.state.position} handleChange={this.handleChange} length='40'/>
             <PersonalData text='Descrição do último cargo:' name='description' value={this.state.description} handleChange={this.handleChange} />
           </fieldset>
-          <SubmitButton handleSendClick={this.handleSendClick} infos={this.state}/>
+          <button type='submit'>Enviar!</button>
         </form>
       </div>
     );
