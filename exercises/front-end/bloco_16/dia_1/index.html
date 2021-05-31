@@ -10,35 +10,33 @@
         <button id="increment">+</button>
         <button id="decrement">-</button>
         <button id="increment-10">Adiciona 10</button>
+        <input type='number'id="increment-quantity" placeholder="Digite a quantidade do incremento">
+        <input type='number' id='decrement-quantity' placeholder="Digite o decremento">
+        Número de cliques: <span id='clickCounter'>X</span>
+        Valored adicionados: <span id="addedValues">X</span>
       </div>
       <script>
 
-        // Formato da action
-        // {
-        //   type: 'ADD_TASK',
-        //   payload: {
-        //     text: 'Dar aula de Redux'
-        //   }
-        // }
+        const INCREMENT = 'INCREMENT';
+        const DECREMENT = 'DECREMENT';
 
-        // {
-        //   type: 'COMPLETE_TASK',
-        //   payload: {
-        //     text: 'Dar aula de Redux'
-        //   }
-        // }
-
-
+        const INITIAL_STATE = {
+          contador: 0,
+          incrementValue: 0,
+          decrementValue: 0,
+          clickCounts: 0,
+          addedValues: [],
+        };
         // o reducer é uma função que retorna o novo valor do meu estado global
         // a partir de uma action
 
-        function counterReducer(state = 0, action) {
+        function counterReducer(state = INITIAL_STATE, action) {
           switch(action.type) {
-            case 'INCREMENT': 
+            case INCREMENT: 
               // state = state + 1 ❌
-              return state + action.payload.amount;
-            case 'DECREMENT': 
-              return state - 1;
+              return {...state, contador: state.contador + action.payload.amount};
+            case DECREMENT: 
+              return {...state, contador: state.contador - action.payload.amount};
             default:
               return state;
           }
@@ -68,6 +66,9 @@
           .addEventListener('click', () => {
             const decrementAction = {
               type: 'DECREMENT',
+              payload: {
+                amount: 1,
+              }
             }
 
             store.dispatch(decrementAction);
@@ -88,7 +89,7 @@
 
         // pede os dados e atualiza a página
         store.subscribe(() => {
-          document.querySelector('#value').innerHTML = store.getState();
+          document.querySelector('#value').innerHTML = store.getState().contador;
         });
       </script>
    </body>
