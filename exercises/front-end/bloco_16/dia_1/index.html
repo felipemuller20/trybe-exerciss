@@ -38,6 +38,8 @@
           return {
             ...state,
             contador: state.contador + valor,
+            clickCounts: state.clickCounts + 1,
+            addedValues: [...state.addedValues, valor]
           }
         }
 
@@ -125,6 +127,8 @@
         // pede os dados e atualiza a página
         store.subscribe(() => {
           document.querySelector('#value').innerHTML = store.getState().contador;
+          document.querySelector('#clickCounter').innerHTML = store.getState().clickCounts;
+          document.querySelector('#addedValues').innerHTML = store.getState().addedValues;
         });
       </script>
    </body>
