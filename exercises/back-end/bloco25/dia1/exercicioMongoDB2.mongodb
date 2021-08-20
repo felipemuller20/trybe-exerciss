@@ -1,0 +1,45 @@
+use('agg_example');
+db.transactions.find();
+
+
+use('agg_example');
+db.transactions.aggregate([
+  { $project: { 
+    bank: 1,
+    _id: 0
+  } }
+])
+
+use('agg_example');
+db.transactions.aggregate([
+  { $group: {
+    _id: "$value",
+    valorTotal: { $sum: "$value" },
+    count: { $sum: 1 }
+  } }
+])
+
+use('agg_example');
+db.transactions.aggregate([
+  {
+    $group: {
+      _id: "$bank",
+      valorTotal: { $sum: "$value" }
+    }
+  }
+])
+
+use('agg_example');
+db.transactions.aggregate([
+  {
+    $group: {
+      _id: "$bank",
+      valorTotal: { $sum: "$value" },
+    }
+  },
+  {
+    $match: {
+      valorTotal: { $gt: 1000 }
+    }
+  }
+])
