@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const verificaNumero = require('../verificaNumero');
 
-describe('Executa a função verificaNumero', () => {
+describe('1. Executa a função verificaNumero', () => {
   describe('Quando o número é maior que 0', () => {
     const result = verificaNumero(10);
     it('Retorna uma string', () => {
@@ -31,4 +31,14 @@ describe('Executa a função verificaNumero', () => {
       expect(result).to.be.equal('neutro');
     });
   });
+
+  describe('Quando o valor informado não é um número', () => {
+    const result = verificaNumero('teste');
+    it('Retorna uma string', () => {
+      expect(result).to.be.a('string');
+    });
+    it('Retorna a mensagem "o valor deve ser um número"', () => {
+      expect(result).to.be.equal('o valor deve ser um número');
+    })
+  })
 });
