@@ -14,6 +14,12 @@ app.get('/drinks', (req, res) => {
   res.json(drinks);
 })
 
+app.get('/drinks/search', (req, res) => {
+  const { name } = req.query;
+  const filterName = drinks.filter((drink) => drink.name.includes(name));
+  res.status(200).json(filterName);
+})
+
 app.get('/drinks/:id', (req, res) => {
   const { id } = req.params;
   const drink = drinks.find((drin) => drin.id === parseInt(id))
