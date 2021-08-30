@@ -28,14 +28,25 @@ app.get('/drinks/:id', (req, res) => {
 
   if (!drink) return res.status(404).json({message: "Drink not found!"});
   res.json(drink);
-
-})
+});
 
 
 app.post('/drinks', (req, res) => {
   const { id, name, price } = req.body;
   drinks.push({ id, name, price });
   res.json({message: 'Drink added successfully!'})
+})
+
+app.put('/drinks/:id', (req, res) => {
+  const { id } = req.params;
+  const { name, price } = req.body;
+
+  const drinkIndex = drinks.findIndex((drink) => drink.id === parseInt(id));
+
+  if (drinkIndex === -1) return res.status(404).json({ message: 'Bebida nao encontrada!' });
+  
+  drinks[drinkIndex] === { ...recipes[recipeIndex], name, price } // drink[recipe] recebe tudo q tem nele mas altera o name e price
+  res.end(); // end nao retorna nenhuma mensagem
 })
 
 
