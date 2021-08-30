@@ -49,5 +49,15 @@ app.put('/drinks/:id', (req, res) => {
   res.end(); // end nao retorna nenhuma mensagem
 })
 
+app.delete('/drinks/:id', (req, res) => {
+  const { id } = req.params;
+
+  const drinkIndex = drinks.findIndex((drink) => drink.id === parseInt(id));
+  if (drinkIndex === -1) return res.json({ message: 'Drink nao encontrado' });
+
+  drinks.splice(drinkIndex, 1); // Deleta 1 elemento na posição 'drinkIndex'
+  res.end();
+})
+
 
 app.listen('3000', () => {console.log('Lendo na porta 3000')})
