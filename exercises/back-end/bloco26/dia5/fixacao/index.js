@@ -5,3 +5,7 @@ const validatePrice = (req, res, next) => {
 
   next();
 }
+
+app.post('/recipes', validatePrice, (req, res) => {
+  ...
+});
