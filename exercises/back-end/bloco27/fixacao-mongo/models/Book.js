@@ -36,13 +36,6 @@ const getById = async (id) => {
   }
 }
 
-const isValid = async (title, authorId) => {
-  if (!title || title.length < 3) return false;
-  if (!authorId || typeof authorId !== 'number') return false;
-
-  return true;
-};
-
 const create = async (bookTitle, authorId) => {
   const db = await connection();
   const book = await db.collection('books').insertOne({ title: bookTitle, author_id: authorId });
@@ -58,6 +51,5 @@ module.exports = {
   getAll,
   getByAuthorId,
   getById,
-  isValid,
   create,
 };
